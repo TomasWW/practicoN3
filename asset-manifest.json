@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/practicon3/static/css/main.073c9b0a.css",
-    "main.js": "/practicon3/static/js/main.0f1c0784.js",
-    "static/js/787.57b0fde9.chunk.js": "/practicon3/static/js/787.57b0fde9.chunk.js",
-    "static/media/logo.svg": "/practicon3/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/practicon3/index.html",
-    "main.073c9b0a.css.map": "/practicon3/static/css/main.073c9b0a.css.map",
-    "main.0f1c0784.js.map": "/practicon3/static/js/main.0f1c0784.js.map",
-    "787.57b0fde9.chunk.js.map": "/practicon3/static/js/787.57b0fde9.chunk.js.map"
+    "main.css": "/practicoN3/static/css/main.073c9b0a.css",
+    "main.js": "/practicoN3/static/js/main.3e30db8c.js",
+    "static/js/787.57b0fde9.chunk.js": "/practicoN3/static/js/787.57b0fde9.chunk.js",
+    "static/media/logo.svg": "/practicoN3/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/practicoN3/index.html",
+    "main.073c9b0a.css.map": "/practicoN3/static/css/main.073c9b0a.css.map",
+    "main.3e30db8c.js.map": "/practicoN3/static/js/main.3e30db8c.js.map",
+    "787.57b0fde9.chunk.js.map": "/practicoN3/static/js/787.57b0fde9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.0f1c0784.js"
+    "static/js/main.3e30db8c.js"
   ]
 }
