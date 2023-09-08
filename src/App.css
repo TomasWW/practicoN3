@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  background-image: url(../src/Img/FondoPPT.jpg);
+  background-color: #282c34;
+  min-height: 100vh;
 }
 
 .App-logo {
@@ -12,16 +15,25 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+.verde {
+  color: green;
+}
+.rojo {
+  color: red;
+}
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  border: 2px solid gray;
+  margin-left: 25%;
+  margin-right: 25%;
+  font-size: calc(10px + 2vmin);
+  color: rgb(10, 9, 9);
+  font-size: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-radius: 15px;
+  background-color: white;
 }
 
 .App-link {
@@ -33,6 +45,15 @@
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(30deg);
   }
+}
+.playerChoice {
+  background-color: transparent;
+  border: 2px solid grey;
+  border-radius: 10px;
+}
+.playerChoice:hover {
+  background-color: grey;
+  cursor: pointer;
 }

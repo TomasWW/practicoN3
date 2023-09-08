@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { GetUserName, UserName } from "./componets/GetUserName";
+import { ButtonOption } from "./componets/ButtonOption";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p className="title">Piedra Papel Tijera</p>
       </header>
+      <GetUserName />
+
+      <UserName  />
+      <ButtonOption />
+
+      <a
+        className="App-link"
+        href="../readme.md"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Learn how to play Rock-Paper-Scissors
+      </a>
     </div>
   );
 }
