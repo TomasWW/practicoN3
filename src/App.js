@@ -1,17 +1,18 @@
 import "./App.css";
 import { GetUserName, UserName } from "./componets/GetUserName";
-import { ButtonOption } from "./componets/ButtonOption";
+import { Game } from "./componets/Game";
+import React, { useState } from "react";
 
 function App() {
+  const [name, setName] = useState("");
   return (
     <div className="App">
       <header className="App-header">
         <p className="title">Piedra Papel Tijera</p>
       </header>
-      <GetUserName />
+      <GetUserName name={name} setName={setName} />
 
-      <UserName  />
-      <ButtonOption />
+      <Game name={name} setName={setName} />
 
       <a
         className="App-link"

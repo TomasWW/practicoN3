@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-export const GetUserName = () => {
-  const [name, setName] = useState("");
-
+export const GetUserName = ({ name, setName }) => {
   const handleChange = (e) => {
     setName(e.target.value);
   };
@@ -22,8 +20,4 @@ export const GetUserName = () => {
       <button onClick={refreshName}>Refresh</button>
     </div>
   );
-};
-
-export const UserName = ({ name }) => {
-  return <div>{name}</div>;
 };
