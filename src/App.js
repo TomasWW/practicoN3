@@ -5,7 +5,7 @@ import React, { useState } from "react";
 
 function App() {
   const [name, setName] = useState("");
-  
+  const [currentStep, setCurrentStep] = useState(1);
 
   return (
     <div className="App">
@@ -13,10 +13,13 @@ function App() {
         <header className="App-header">
           <p className="title">Piedra Papel Tijera</p>
         </header>
-        <GetUserName name={name} setName={setName} />
-
-        <Game name={name}  />
-        
+        {currentStep === 1 && <GetUserName name={name} setName={setName} />}
+        {currentStep === 1 && (
+          <button onClick={() => setCurrentStep(currentStep + 1)}>
+            Ingresar
+          </button>
+        )}
+        {currentStep === 2 && <Game name={name} />}
       </div>
       <footer>
         <a

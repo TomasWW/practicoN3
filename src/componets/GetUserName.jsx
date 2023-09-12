@@ -34,11 +34,9 @@ export const GetUserName = ({ name, setName }) => {
         onChange={handleChange}
         onBlur={handleBlur}
         placeholder="Ingresa tu nombre"
+        
       />
       <button onClick={refreshName}>Refresh</button>
-      
-
-
     </div>
   );
 };
