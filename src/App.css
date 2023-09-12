@@ -15,11 +15,19 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-.verde {
-  color: green;
+.name {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 15px;
+  margin-left: 25%;
+  margin-right: 25%;
 }
-.rojo {
-  color: red;
+.background {
+  background-color: rgba(300, 300,300, 0.9); 
+  border: 2px solid black;
+  border-radius: 15px;
+  margin-left: 25%;
+  margin-right: 25%;
 }
 .App-header {
   border: 2px solid gray;
@@ -40,14 +48,6 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(30deg);
-  }
-}
 .playerChoice {
   background-color: transparent;
   border: 2px solid grey;
@@ -56,4 +56,9 @@
 .playerChoice:hover {
   background-color: grey;
   cursor: pointer;
+  transform: rotate(15deg);
 }
+.selected {
+  background-color: green;
+  border: 2px solid green;
+  }

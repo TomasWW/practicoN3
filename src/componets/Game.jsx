@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import rock from "../Img/ROCK.jpg";
 import paper from "../Img/PAPER.jpg";
 import scissors from "../Img/SCISSORS.jpg";
@@ -10,18 +10,28 @@ const SCISSORS = "Tijeras";
 const PC_WINS = "Gano la PC";
 const DRAW = "Empate";
 
-export const Game = ({ name, setName }) => {
+export const Game = ({ name }) => {
   const [userChoice, setUserChoice] = useState("");
   const [pc, setPc] = useState("");
   const [result, setResult] = useState("");
+  const [selectedOption, setSelectedOption] = useState("");
+  const [pcCount, setPcCount] = useState(0);
+  const [userCount, setUserCount] = useState(0);
+  const [gameActive, setGameActive] = useState(true);
+  const [gameWinner, setGameWinner] = useState(null);
+
   const handleButtonClick = (value) => {
     setUserChoice(value);
+    setSelectedOption(value);
   };
 
   const handleButtoPlay = () => {
+    if (!gameActive) {
+      return alert("Juego finalizado");
+    }
+
     let num = Math.random() * 3;
     let round = Math.round(num);
-
     let pcChoice;
     if (round === 0) {
       pcChoice = ROCK;
@@ -33,38 +43,63 @@ export const Game = ({ name, setName }) => {
 
     if (pcChoice === userChoice) {
       setResult(DRAW);
-      console.log(userChoice, pcChoice);
     } else if (
       (userChoice === ROCK && pcChoice === SCISSORS) ||
       (userChoice === SCISSORS && pcChoice === PAPER) ||
       (userChoice === PAPER && pcChoice === ROCK)
     ) {
       setResult(`Gano: ${name}`);
-      console.log(userChoice, pcChoice);
+      setUserCount(userCount + 1);
     } else {
       setResult(PC_WINS);
-      console.log(userChoice, pcChoice);
+      setPcCount(pcCount + 1);
     }
   };
 
+  useEffect(() => {
+    if (pcCount === 3 || userCount === 3) {
+      setGameActive(false);
+      if (pcCount > userCount) {
+        setGameWinner("Gano PC");
+      } else setGameWinner(`Gano: ${name}`);
+    }
+  }, [pcCount, userCount,name]);
+
   return (
-    <div className="container-choise" id="userSelection">
-      <button className="playerChoice" onClick={() => handleButtonClick(ROCK)}>
+    <div className="container-choise">
+      <button
+        className={`playerChoice ${selectedOption === ROCK ? "selected" : ""}`}
+        onClick={() => handleButtonClick(ROCK)}
+      >
         <img src={rock} width="100" height="100" alt="Rock" />
       </button>
-      <button className="playerChoice" onClick={() => handleButtonClick(PAPER)}>
+      <button
+        className={`playerChoice ${selectedOption === PAPER ? "selected" : ""}`}
+        onClick={() => handleButtonClick(PAPER)}
+      >
         <img src={paper} width="100" height="100" alt="Paper" />
       </button>
       <button
-        className="playerChoice"
+        className={`playerChoice ${
+          selectedOption === SCISSORS ? "selected" : ""
+        }`}
         onClick={() => handleButtonClick(SCISSORS)}
       >
         <img src={scissors} width="100" height="100" alt="Scissors" />
       </button>
-      <p>{userChoice}</p>
+      <p>
+        {name || "Usuario"}, eligio: {userChoice}
+      </p>
       <button onClick={handleButtoPlay}> Play</button>
       <p> PC eligio: {pc}</p>
       <p> {result}</p>
+
+      <>PC : {pcCount}</>
+
+      <p>
+        {name || "Usuario"} : {userCount}
+      </p>
+      <h1>{gameWinner}</h1>
     </div>
   );
 };
