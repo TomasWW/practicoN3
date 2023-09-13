@@ -26,7 +26,7 @@ export const Game = ({ name }) => {
   };
 
   const handleButtoPlay = () => {
-    if (gameActive) {
+    if (gameActive) { //manejo aleatorio de la PC
       let num = Math.random() * 3;
       let round = Math.round(num);
       let pcChoice;
@@ -38,7 +38,7 @@ export const Game = ({ name }) => {
 
       setPc(pcChoice);
 
-      if (pcChoice === userChoice) {
+      if (pcChoice === userChoice) { //reglas del juego
         setResult(DRAW);
       } else if (
         (userChoice === ROCK && pcChoice === SCISSORS) ||
@@ -54,7 +54,7 @@ export const Game = ({ name }) => {
     }
   };
 
-  useEffect(() => {
+  useEffect(() => { //manejo de las partidas
     if (pcCount === 3 || userCount === 3) {
       setGameActive(false);
       if (pcCount > userCount) {
@@ -63,8 +63,10 @@ export const Game = ({ name }) => {
     }
   }, [pcCount, userCount, name]);
 
-  return (
+  return ( //Manejo de la eleccion del usuario
     <div className="container-choise">
+      <p>Bienvenido {name} será al mejor de 5<br/> 
+      Por Favor, selecciona tu mano! </p>
       <button
         className={`playerChoice ${selectedOption === ROCK ? "selected" : ""}`}
         onClick={() => handleButtonClick(ROCK)}
@@ -85,9 +87,14 @@ export const Game = ({ name }) => {
       >
         <img src={scissors} width="100" height="100" alt="Scissors" />
       </button>
-      <p>
-        {name || "Usuario"}, eligio: {userChoice}
-      </p>
+
+      {userChoice !== "" && (
+        <p>
+          {" "}
+          {name} elegio: {userChoice}
+        </p>
+      )}
+
       <button onClick={handleButtoPlay}> Play</button>
       <p> PC eligio: {pc}</p>
       <p> {result}</p>

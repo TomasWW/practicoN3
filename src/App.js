@@ -17,7 +17,7 @@ function App() {
     }
   };
 
-  return (
+  return ( //agrego manejo de renderizacion para mejorar experiencia del usuario
     <div className="App">
       <div className="background">
         <header className="App-header">
@@ -25,7 +25,9 @@ function App() {
         </header>
         {currentStep === 1 && <GetUserName name={name} setName={setName} />}
 
-        <button onClick={handleIngresarClick}>Ingresar</button>
+        {currentStep === 1 && (
+          <button onClick={handleIngresarClick}>Ingresar</button>
+        )}
         {error && <p className="error-message">{error}</p>}
         {currentStep === 2 && <Game name={name} />}
       </div>
