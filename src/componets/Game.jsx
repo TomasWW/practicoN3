@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import rock from "../Img/ROCK.jpg";
 import paper from "../Img/PAPER.jpg";
 import scissors from "../Img/SCISSORS.jpg";
+import { ScoreBoard } from "./ScoreBoard";
 
 const ROCK = "Piedra";
 const PAPER = "Papel";
@@ -25,8 +26,9 @@ export const Game = ({ name }) => {
     setSelectedOption(value);
   };
 
-  const handleButtoPlay = () => {
-    if (gameActive) { //manejo aleatorio de la PC
+  const handleButtonPlay = () => {
+    if (gameActive) {
+      //manejo aleatorio de la PC
       let num = Math.random() * 3;
       let round = Math.round(num);
       let pcChoice;
@@ -38,7 +40,8 @@ export const Game = ({ name }) => {
 
       setPc(pcChoice);
 
-      if (pcChoice === userChoice) { //reglas del juego
+      if (pcChoice === userChoice) {
+        //reglas del juego
         setResult(DRAW);
       } else if (
         (userChoice === ROCK && pcChoice === SCISSORS) ||
@@ -54,7 +57,8 @@ export const Game = ({ name }) => {
     }
   };
 
-  useEffect(() => { //manejo de las partidas
+  useEffect(() => {
+    //manejo de las partidas
     if (pcCount === 3 || userCount === 3) {
       setGameActive(false);
       if (pcCount > userCount) {
@@ -63,10 +67,13 @@ export const Game = ({ name }) => {
     }
   }, [pcCount, userCount, name]);
 
-  return ( //Manejo de la eleccion del usuario
+  return (
+    //Manejo de la eleccion del usuario
     <div className="container-choise">
-      <p>Bienvenido {name} será al mejor de 5<br/> 
-      Por Favor, selecciona tu mano! </p>
+      <p>
+        Bienvenido {name} será al mejor de 5<br />
+        Por Favor, selecciona tu mano!{" "}
+      </p>
       <button
         className={`playerChoice ${selectedOption === ROCK ? "selected" : ""}`}
         onClick={() => handleButtonClick(ROCK)}
@@ -88,22 +95,23 @@ export const Game = ({ name }) => {
         <img src={scissors} width="100" height="100" alt="Scissors" />
       </button>
 
-      {userChoice !== "" && (
-        <p>
-          {" "}
-          {name} elegio: {userChoice}
-        </p>
-      )}
+      <div className="game-grid-container">
+        {userChoice !== "" && (
+          <button onClick={handleButtonPlay} className="button">
+            Play
+          </button>
+        )}
+        {userChoice !== "" && (
+          <div className="message">
+            {name} seleccionó: {userChoice}
+          </div>
+        )}
+        {userChoice !== "" && <div className="message">PC eligió: {pc}</div>}
+        {userChoice !== "" && <div className="message">{result}</div>}
+      </div>
 
-      <button onClick={handleButtoPlay}> Play</button>
-      <p> PC eligio: {pc}</p>
-      <p> {result}</p>
+      <ScoreBoard userName={name} pcCount={pcCount} userCount={userCount} />
 
-      <>PC : {pcCount}</>
-
-      <p>
-        {name || "Usuario"} : {userCount}
-      </p>
       <h1>{gameWinner}</h1>
     </div>
   );

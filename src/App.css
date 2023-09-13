@@ -65,3 +65,64 @@
 .error-message {
   color: red;
 }
+
+.scoreboard {
+  background-color: whitesmoke;
+  border: 2px solid black;
+  border-radius: 15px;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 20px;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas */
+  grid-gap: 5px; /* Espacio entre elementos */
+  margin-top: 5px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.player, .score {
+  padding: 1px;
+  text-align: center;
+  border: 1px solid #ccc;
+  background-color: #f2f2f2;
+  border-radius: 15px;
+}
+.score {
+  background-color: rgba(114, 113, 113, 0.603);
+  font-weight: bold;
+}
+
+.game-grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas con el mismo ancho */
+  grid-gap: 15px; /* Espacio entre elementos */
+  text-align: center;
+  max-width: 600px; /* Ajusta el ancho máximo según tus preferencias */
+  margin: 0 auto; /* Centra el grid horizontalmente */
+  padding: 20px;
+}
+
+.message {
+  grid-column: span 2; /* Ocupa el ancho de ambas columnas */
+  background-color: #f2f2f2;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
+
+.button {
+  grid-column: span 2; /* Ocupa el ancho de ambas columnas */
+  background-color: #414242;
+  color: #fff;
+  padding: 10px;
+  margin-left: 25%;
+  margin-right: 25%;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #00b336;
+}

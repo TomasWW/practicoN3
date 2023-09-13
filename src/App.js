@@ -17,7 +17,8 @@ function App() {
     }
   };
 
-  return ( //agrego manejo de renderizacion para mejorar experiencia del usuario
+  return (
+    //agrego manejo de renderizacion para mejorar experiencia del usuario
     <div className="App">
       <div className="background">
         <header className="App-header">
