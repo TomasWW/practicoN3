@@ -26,33 +26,31 @@ export const Game = ({ name }) => {
   };
 
   const handleButtoPlay = () => {
-    if (!gameActive) {
-      return alert("Juego finalizado");
-    }
+    if (gameActive) {
+      let num = Math.random() * 3;
+      let round = Math.round(num);
+      let pcChoice;
+      if (round === 0) {
+        pcChoice = ROCK;
+      } else if (round === 1) {
+        pcChoice = PAPER;
+      } else pcChoice = SCISSORS;
 
-    let num = Math.random() * 3;
-    let round = Math.round(num);
-    let pcChoice;
-    if (round === 0) {
-      pcChoice = ROCK;
-    } else if (round === 1) {
-      pcChoice = PAPER;
-    } else pcChoice = SCISSORS;
+      setPc(pcChoice);
 
-    setPc(pcChoice);
-
-    if (pcChoice === userChoice) {
-      setResult(DRAW);
-    } else if (
-      (userChoice === ROCK && pcChoice === SCISSORS) ||
-      (userChoice === SCISSORS && pcChoice === PAPER) ||
-      (userChoice === PAPER && pcChoice === ROCK)
-    ) {
-      setResult(`Gano: ${name}`);
-      setUserCount(userCount + 1);
-    } else {
-      setResult(PC_WINS);
-      setPcCount(pcCount + 1);
+      if (pcChoice === userChoice) {
+        setResult(DRAW);
+      } else if (
+        (userChoice === ROCK && pcChoice === SCISSORS) ||
+        (userChoice === SCISSORS && pcChoice === PAPER) ||
+        (userChoice === PAPER && pcChoice === ROCK)
+      ) {
+        setResult(`Gano: ${name}`);
+        setUserCount(userCount + 1);
+      } else {
+        setResult(PC_WINS);
+        setPcCount(pcCount + 1);
+      }
     }
   };
 
@@ -63,7 +61,7 @@ export const Game = ({ name }) => {
         setGameWinner("Gano PC");
       } else setGameWinner(`Gano: ${name}`);
     }
-  }, [pcCount, userCount,name]);
+  }, [pcCount, userCount, name]);
 
   return (
     <div className="container-choise">

@@ -23,7 +23,7 @@
   margin-right: 25%;
 }
 .background {
-  background-color: rgba(300, 300,300, 0.9); 
+  background-color: rgba(300, 300, 300, 0.9);
   border: 2px solid black;
   border-radius: 15px;
   margin-left: 25%;
@@ -31,8 +31,8 @@
 }
 .App-header {
   border: 2px solid gray;
-  margin-left: 25%;
-  margin-right: 25%;
+  margin-left: 20%;
+  margin-right: 20%;
   font-size: calc(10px + 2vmin);
   color: rgb(10, 9, 9);
   font-size: 50px;
@@ -61,4 +61,7 @@
 .selected {
   background-color: green;
   border: 2px solid green;
-  }
+}
+.error-message {
+  color: red;
+}

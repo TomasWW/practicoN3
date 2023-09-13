@@ -6,6 +6,16 @@ import React, { useState } from "react";
 function App() {
   const [name, setName] = useState("");
   const [currentStep, setCurrentStep] = useState(1);
+  const [error, setError] = useState("");
+
+  const handleIngresarClick = () => {
+    if (name.trim() === "") {
+      setError("Por favor, ingrese un nombre válido.");
+    } else {
+      setCurrentStep(currentStep + 1);
+      setError(""); // Limpiar el mensaje de error si el nombre es válido
+    }
+  };
 
   return (
     <div className="App">
@@ -14,11 +24,9 @@ function App() {
           <p className="title">Piedra Papel Tijera</p>
         </header>
         {currentStep === 1 && <GetUserName name={name} setName={setName} />}
-        {currentStep === 1 && (
-          <button onClick={() => setCurrentStep(currentStep + 1)}>
-            Ingresar
-          </button>
-        )}
+
+        <button onClick={handleIngresarClick}>Ingresar</button>
+        {error && <p className="error-message">{error}</p>}
         {currentStep === 2 && <Game name={name} />}
       </div>
       <footer>
