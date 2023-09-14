@@ -8,13 +8,13 @@ const ROCK = "Piedra";
 const PAPER = "Papel";
 const SCISSORS = "Tijeras";
 
-const PC_WINS = "Gano la PC";
+const PC_WINS = "Ganó la PC";
 const DRAW = "Empate";
 
 export const Game = ({ name }) => {
   const [userChoice, setUserChoice] = useState("");
   const [pc, setPc] = useState("");
-  const [result, setResult] = useState("");
+  const [result, setResult] = useState("Resultados");
   const [selectedOption, setSelectedOption] = useState("");
   const [pcCount, setPcCount] = useState(0);
   const [userCount, setUserCount] = useState(0);
@@ -62,8 +62,8 @@ export const Game = ({ name }) => {
     if (pcCount === 3 || userCount === 3) {
       setGameActive(false);
       if (pcCount > userCount) {
-        setGameWinner("Gano PC");
-      } else setGameWinner(`Gano: ${name}`);
+        setGameWinner("¡¡Gano la PC!!");
+      } else setGameWinner(`¡¡ ${name} Ganaste!! `);
     }
   }, [pcCount, userCount, name]);
 
@@ -71,7 +71,7 @@ export const Game = ({ name }) => {
     //Manejo de la eleccion del usuario
     <div className="container-choise">
       <p>
-        Bienvenido {name} será al mejor de 5<br />
+        Bienvenido <b>{name} </b>será al mejor de 5<br />
         Por Favor, selecciona tu mano!{" "}
       </p>
       <button
@@ -95,24 +95,28 @@ export const Game = ({ name }) => {
         <img src={scissors} width="100" height="100" alt="Scissors" />
       </button>
 
+      <h1>{gameWinner}</h1>
+
       <div className="game-grid-container">
         {userChoice !== "" && (
-          <button onClick={handleButtonPlay} className="button">
-            Play
+          <button
+            onClick={handleButtonPlay}
+            className={gameActive ? "button" : "button disabled"}
+          >
+            Jugar
           </button>
         )}
+
         {userChoice !== "" && (
           <div className="message">
             {name} seleccionó: {userChoice}
           </div>
         )}
         {userChoice !== "" && <div className="message">PC eligió: {pc}</div>}
-        {userChoice !== "" && <div className="message">{result}</div>}
+        {userChoice !== "" && <div className="message round">{result}</div>}
       </div>
 
       <ScoreBoard userName={name} pcCount={pcCount} userCount={userCount} />
-
-      <h1>{gameWinner}</h1>
     </div>
   );
 };

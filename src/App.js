@@ -2,12 +2,16 @@ import "./App.css";
 import { GetUserName } from "./componets/GetUserName";
 import { Game } from "./componets/Game";
 import React, { useState } from "react";
+import { MenuStart } from "./componets/MenuStart";
 
 function App() {
   const [name, setName] = useState("");
   const [currentStep, setCurrentStep] = useState(1);
   const [error, setError] = useState("");
-
+  const handleButtonRefresh = () => {
+    setCurrentStep(currentStep - 1);
+    setName("");
+  };
   const handleIngresarClick = () => {
     if (name.trim() === "") {
       setError("Por favor, ingrese un nombre válido.");
@@ -21,16 +25,21 @@ function App() {
     //agrego manejo de renderizacion para mejorar experiencia del usuario
     <div className="App">
       <div className="background">
-        <header className="App-header">
-          <p className="title">Piedra Papel Tijera</p>
-        </header>
+        {currentStep === 1 && <MenuStart />}
         {currentStep === 1 && <GetUserName name={name} setName={setName} />}
 
         {currentStep === 1 && (
-          <button onClick={handleIngresarClick}>Ingresar</button>
+          <button className="inputName" onClick={handleIngresarClick}>
+            Ingresar
+          </button>
         )}
         {error && <p className="error-message">{error}</p>}
         {currentStep === 2 && <Game name={name} />}
+        {currentStep === 2 && (
+          <button className="newgame" onClick={handleButtonRefresh}>
+            Nuevo juego
+          </button>
+        )}
       </div>
       <footer>
         <a

@@ -3,19 +3,14 @@
   background-image: url(../src/Img/FondoPPT.jpg);
   background-color: #282c34;
   min-height: 100vh;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 .name {
+  display: flex;
+  justify-content: center;
+}
+.welcome {
   background-color: white;
   border: 2px solid black;
   border-radius: 15px;
@@ -33,25 +28,27 @@
   border: 2px solid gray;
   margin-left: 20%;
   margin-right: 20%;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(20px + 2vmin);
   color: rgb(10, 9, 9);
-  font-size: 50px;
+
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
   border-radius: 15px;
   background-color: white;
 }
 
 .App-link {
-  color: #61dafb;
+  color: #6b61fb;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  
 }
 
 .playerChoice {
   background-color: transparent;
   border: 2px solid grey;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 .playerChoice:hover {
   background-color: grey;
@@ -82,7 +79,8 @@
   padding-left: 10%;
   padding-right: 10%;
 }
-.player, .score {
+.player,
+.score {
   padding: 1px;
   text-align: center;
   border: 1px solid #ccc;
@@ -111,6 +109,28 @@
   border: 1px solid #ccc;
   border-radius: 15px;
 }
+.message.round {
+  background-color: rgba(114, 113, 113, 0.603);
+}
+.newgame {
+  background-color: whitesmoke(112, 122, 98);
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 25%;
+  margin-right: 25%;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.newgame:hover {
+  background-color: green;
+}
+
+.refresh {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
 
 .button {
   grid-column: span 2; /* Ocupa el ancho de ambas columnas */
@@ -119,10 +139,35 @@
   padding: 10px;
   margin-left: 25%;
   margin-right: 25%;
-  border: none;
+  border-radius: 15px;
   cursor: pointer;
 }
-
+.button.disabled{
+  background-color: red;
+  
+}
+.button.disabled:hover{
+  background-color: red;
+}
 .button:hover {
   background-color: #00b336;
+}
+
+.inputName {
+  background-color: whitesmoke;
+  border-radius: 15px;
+  margin: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+.inputName:hover {
+  background-color: grey;
+}
+
+input {
+  color: #333; /* Cambiar el color del texto */
+  background-color: #f0f0f0; /* Cambiar el color de fondo */
+  border: 1px solid #ccc; /* Cambiar el borde */
+  padding: 10px; /* Cambiar el espaciado interno */
+  border-radius: 15px; /* Agregar esquinas redondeadas */
 }
