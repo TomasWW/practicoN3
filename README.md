@@ -22,7 +22,7 @@ Elige sabiamente y compite para ser el primero en alcanzar el honor. Este no es 
 
 ## Cómo Jugar
 
-1. Abre el archivo `index.html` en tu navegador web o sigue el siguiente link: https://tomasww.github.io/sobre-mi/PiedraPapelTijera/index.html
+1. Ingrese a https://tomasww.github.io/practicoN3
 2. Ingresa tu nombre en el campo proporcionado y haz clic en el botón "Ingresar".
 3. Selecciona tu elección haciendo clic en uno de los botones: Piedra, Papel o Tijeras.
 4. La computadora hará su elección automáticamente al hacer click en "Jugar".
