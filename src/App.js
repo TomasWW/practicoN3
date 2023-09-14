@@ -44,7 +44,7 @@ function App() {
       <footer>
         <a
           className="App-link"
-          href="../README.md"
+          href="https://github.com/TomasWW/practicoN3/blob/main/README.md"
           target="_blank"
           rel="noopener noreferrer"
         >
