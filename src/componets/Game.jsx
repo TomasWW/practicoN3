@@ -115,8 +115,8 @@ export const Game = ({ name }) => {
         {userChoice !== "" && <div className="message">PC eligió: {pc}</div>}
         {userChoice !== "" && <div className="message round">{result}</div>}
       </div>
-
-      <ScoreBoard userName={name} pcCount={pcCount} userCount={userCount} />
+      {userChoice !== "" && pc !== "" &&
+      <ScoreBoard userName={name} pcCount={pcCount} userCount={userCount} />}
     </div>
   );
 };
