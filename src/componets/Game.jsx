@@ -70,10 +70,12 @@ export const Game = ({ name }) => {
   return (
     //Manejo de la eleccion del usuario
     <div className="container-choise">
-      <p>
+      <h2>
+
         Bienvenido <b>{name} </b>será al mejor de 5<br />
-        Por Favor, selecciona tu mano!{" "}
-      </p>
+        Por Favor, seleccioná tu mano!{" "}
+      
+      </h2>
       <button
         className={`playerChoice ${selectedOption === ROCK ? "selected" : ""}`}
         onClick={() => handleButtonClick(ROCK)}
@@ -109,10 +111,10 @@ export const Game = ({ name }) => {
 
         {userChoice !== "" && (
           <div className="message">
-            {name} seleccionó: {userChoice}
+            <strong> {name}</strong> eligió {userChoice}
           </div>
         )}
-        {userChoice !== "" && <div className="message">PC eligió: {pc}</div>}
+        {userChoice !== "" && <div className="message"><strong>PC</strong> eligió {pc}</div>}
         {userChoice !== "" && <div className="message round">{result}</div>}
       </div>
       {userChoice !== "" && pc !== "" &&
