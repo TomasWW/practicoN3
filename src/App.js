@@ -3,6 +3,7 @@ import { GetUserName } from "./componets/GetUserName";
 import { Game } from "./componets/Game";
 import React, { useState } from "react";
 import { MenuStart } from "./componets/MenuStart";
+import { ButtonDefault } from "./componets/ButtonDefault";
 
 function App() {
   const [name, setName] = useState("");
@@ -29,16 +30,15 @@ function App() {
         {currentStep === 1 && <GetUserName name={name} setName={setName} />}
 
         {currentStep === 1 && (
-          <button className="inputName" onClick={handleIngresarClick}>
-            Ingresar
-          </button>
+          <ButtonDefault onClick={handleIngresarClick}> Ingresar</ButtonDefault>
         )}
         {error && <p className="error-message">{error}</p>}
         {currentStep === 2 && <Game name={name} />}
         {currentStep === 2 && (
-          <button className="newgame" onClick={handleButtonRefresh}>
-            Nuevo juego
-          </button>
+          <ButtonDefault onClick={handleButtonRefresh}>
+            {" "}
+            Nuevo Juego{" "}
+          </ButtonDefault>
         )}
       </div>
       <footer>

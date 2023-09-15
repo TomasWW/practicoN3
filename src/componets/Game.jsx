@@ -3,6 +3,7 @@ import rock from "../Img/ROCK.jpg";
 import paper from "../Img/PAPER.jpg";
 import scissors from "../Img/SCISSORS.jpg";
 import { ScoreBoard } from "./ScoreBoard";
+import { ExtendendButton } from "./ButtonDefault";
 
 const ROCK = "Piedra";
 const PAPER = "Papel";
@@ -71,10 +72,8 @@ export const Game = ({ name }) => {
     //Manejo de la eleccion del usuario
     <div className="container-choise">
       <h2>
-
         Bienvenido <b>{name} </b>será al mejor de 5<br />
         Por Favor, seleccioná tu mano!{" "}
-      
       </h2>
       <button
         className={`playerChoice ${selectedOption === ROCK ? "selected" : ""}`}
@@ -101,12 +100,13 @@ export const Game = ({ name }) => {
 
       <div className="game-grid-container">
         {userChoice !== "" && (
-          <button
+          <ExtendendButton
             onClick={handleButtonPlay}
-            className={gameActive ? "button" : "button disabled"}
+            className={gameActive ? "" : "button disabled"}
           >
+            {" "}
             Jugar
-          </button>
+          </ExtendendButton>
         )}
 
         {userChoice !== "" && (
@@ -114,11 +114,16 @@ export const Game = ({ name }) => {
             <strong> {name}</strong> eligió {userChoice}
           </div>
         )}
-        {userChoice !== "" && <div className="message"><strong>PC</strong> eligió {pc}</div>}
+        {userChoice !== "" && (
+          <div className="message">
+            <strong>PC</strong> eligió {pc}
+          </div>
+        )}
         {userChoice !== "" && <div className="message round">{result}</div>}
       </div>
-      {userChoice !== "" && pc !== "" &&
-      <ScoreBoard userName={name} pcCount={pcCount} userCount={userCount} />}
+      {userChoice !== "" && pc !== "" && (
+        <ScoreBoard userName={name} pcCount={pcCount} userCount={userCount} />
+      )}
     </div>
   );
 };
