@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+
+//Boton con StyledComponent generico. 
 export const ButtonDefault = styled.button`
   background-color: whitesmoke(112, 122, 98);
   grid-column: span 2;

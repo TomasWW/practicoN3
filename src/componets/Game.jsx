@@ -99,7 +99,7 @@ export const Game = ({ name }) => {
       <h1>{gameWinner}</h1>
 
       <div className="game-grid-container">
-        {userChoice !== "" && (
+        {userChoice !== "" && (  //Desactiva el boton 
           <ExtendendButton
             onClick={handleButtonPlay}
             className={gameActive ? "" : "button disabled"}

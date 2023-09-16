@@ -133,19 +133,6 @@
 .message.round {
   background-color: rgba(114, 113, 113, 0.603);
 }
-/* .newgame {
-  background-color: whitesmoke(112, 122, 98);
-  padding: 10px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  margin-left: 25%;
-  margin-right: 25%;
-  border-radius: 15px;
-  cursor: pointer;
-}
-.newgame:hover {
-  background-color: green;
-} */
 
 .refresh {
   border: none;
@@ -153,26 +140,6 @@
   cursor: pointer;
 }
 
-/* .button {
-  grid-column: span 2; 
-  background-color: #414242;
-  color: #fff;
-  padding: 10px;
-  margin-left: 25%;
-  margin-right: 25%;
-  border-radius: 15px;
-  cursor: pointer;
-}
-
-.button.disabled {
-  background-color: red;
-}
-.button.disabled:hover {
-  background-color: red;
-}
-.button:hover {
-  background-color: #00b336;
-} */
 
 .inputName {
   background-color: whitesmoke;

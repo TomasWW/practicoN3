@@ -1,7 +1,7 @@
 import React from "react";
 
 export function ScoreBoard({ userName, userCount, pcCount }) {
-  return (
+  return ( //Componente para tablero de resultados
     <div className="scoreboard">
       <div className="title"> Tablero de puntajes </div>
       <div className="grid-container">

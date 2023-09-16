@@ -4,11 +4,11 @@ import clean from "../Img/clean.jpg"
 export const GetUserName = ({ name, setName }) => {
   const handleChange = (e) => {
     const inputValue = e.target.value;
-    // Utilizamos una expresión regular para permitir solo letras y espacios
+    //Validacion del input ingresado por el usuario
     const validName = inputValue.replace(/[^a-zA-Z\s]/g, "");
-    setName(validName); // Actualizar el nombre en tiempo real
+    setName(validName); 
   };
-
+//Boton para borrar nombre ingresado
   const refreshName = () => {
     setName("");
   };

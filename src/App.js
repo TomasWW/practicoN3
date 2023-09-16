@@ -7,7 +7,7 @@ import { ButtonDefault } from "./componets/ButtonDefault";
 
 function App() {
   const [name, setName] = useState("");
-  const [currentStep, setCurrentStep] = useState(1);
+    const [currentStep, setCurrentStep] = useState(1); //manejo de la renderizacion por etapas
   const [error, setError] = useState("");
   const handleButtonRefresh = () => {
     setCurrentStep(currentStep - 1);
@@ -42,7 +42,7 @@ function App() {
         )}
       </div>
       <footer>
-        <a
+        <a // Link con acceso al Readme
           className="App-link"
           href="https://github.com/TomasWW/practicoN3/blob/main/README.md"
           target="_blank"
